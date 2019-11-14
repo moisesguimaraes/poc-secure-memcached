@@ -6,8 +6,16 @@ networks:
 
 services:
   cache:
-    image: "memcached"
+    image: memcached
     networks:
       - app-tier
     ports:
-      - "11211:11211"
+      - 11211:11211
+
+  tls_cache:
+    build: ./tls_memcached/debian
+    image: tls_memcached
+    networks:
+      - app-tier
+    ports:
+      - 11212:11211
