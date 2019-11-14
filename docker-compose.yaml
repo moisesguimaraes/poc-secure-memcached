@@ -1,0 +1,13 @@
+version: "3"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  cache:
+    image: "memcached"
+    networks:
+      - app-tier
+    ports:
+      - "11211:11211"
