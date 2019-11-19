@@ -51,6 +51,8 @@ RUN set -x \
 		--enable-sasl-pwdb \
 		--enable-tls \
 		$enableExtstore \
+# while https://github.com/memcached/memcached/issues/572 didn't merge
+	&& sed -i "s/assert(c->thread->thread_id == (unsigned long)pthread_self());/assert(pthread_equal(c->thread->thread_id, pthread_self()) != 0);/g" tls.c \
 	&& make -j "$(nproc)" \
 	\
 # TODO https://github.com/memcached/memcached/issues/382 "t/chunked-extstore.t is flaky on arm32v6"
