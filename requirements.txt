@@ -1,3 +1,4 @@
 pylibmc>=1.6.1 # BSD
 pymemcache>=2.2.2 # Apache-2.0
 python-memcached>=1.59 # PSF
+python-binary-memcached>=0.28.0 # MIT
