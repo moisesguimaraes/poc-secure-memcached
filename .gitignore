@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# certificates
+certs/gen/
+certs/pregen/
