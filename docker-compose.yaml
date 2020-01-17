@@ -7,8 +7,7 @@ services:
       - 11211:11211
 
   tls_cache:
-    build: ./tls_memcached/debian
-    image: tls_memcached
+    image: memcached
     ports:
       - 11212:11211
     volumes:
