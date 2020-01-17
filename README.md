@@ -33,8 +33,10 @@ Since version 1.4.3, Memcached supports authentication via SASL. This feature re
 
 This approach protects the server from unauthorized read and write operations. The complexity and performance impact is according to the SASL usage.
 
-This approach doesn't protects the data in transit.  
+This approach doesn't protects the data in transit or held in memory by Memcached in any other way.
 
 ### Encrypting data before storing it in Memcached
 
 This approach consists of encrypting the data before sending it to Memcached. The complexity impact is dealing with key sharing for the encryption/decryption process. The performance impact depends on the algorithms used for encryption.
+
+This approach protects the data both in transit and held in memory by Memcached, but the key sharing is more prone to setup errors than the TLS or the SASL approach.
