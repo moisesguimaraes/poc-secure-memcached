@@ -9,7 +9,7 @@
 
 # Note: Files and paths must not contain spaces.
 
-DOMAIN = memcached.test
+DOMAIN = localhost
 DEFAULT_CERT_TYPE = rsa2048
 DEFAULT_DAYS = 730
 DEFAULT_HASH = sha256
