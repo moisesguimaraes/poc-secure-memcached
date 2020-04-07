@@ -6,5 +6,16 @@ from fib_dict import dict_fibonacci
 from fib_lru import lru_fibonacci
 from fib_bmemcached import bmemcached_fibonacci
 from fib_bmemcached import tls_bmemcached_fibonacci
+from fib_pymemcache import pymemcache_fibonacci
+from fib_pymemcache import tls_pymemcache_fibonacci
 
-stress(["dict", "lru", "bmemcached", "tls_bmemcached"], globals=globals())
+prefixes = [
+    "dict",
+    "lru",
+    "bmemcached",
+    "tls_bmemcached",
+    "pymemcache",
+    "tls_pymemcache",
+]
+
+stress(prefixes=prefixes, globals=globals())

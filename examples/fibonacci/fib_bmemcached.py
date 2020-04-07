@@ -24,10 +24,10 @@ def bmemcached_fibonacci(n):
     if n in (1, 2):
         return 1
 
-    f = client.get(str(n))
+    f = client.get("b"+str(n))
     if f is None:
         f = bmemcached_fibonacci(n - 1) + bmemcached_fibonacci(n - 2)
-        client.set(str(n), str(f))
+        client.set("b"+str(n), str(f))
 
     return int(f)
 
@@ -38,10 +38,10 @@ def tls_bmemcached_fibonacci(n):
     if n in (1, 2):
         return 1
 
-    f = tls_client.get(str(n))
+    f = tls_client.get("b"+str(n))
     if f is None:
         f = tls_bmemcached_fibonacci(n - 1) + tls_bmemcached_fibonacci(n - 2)
-        tls_client.set(str(n), str(f))
+        tls_client.set("b"+str(n), str(f))
 
     return int(f)
 
