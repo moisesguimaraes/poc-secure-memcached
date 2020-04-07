@@ -14,7 +14,7 @@ client.flush_all()
 
 # with TLS
 
-ctx = ssl.create_default_context(cafile="certs/gen/crt/ca-root.crt")
+ctx = ssl.create_default_context(cafile="tls/ca-root.crt")
 
 # uncomment for client auth
 # ctr.load_cert_chain("certs/gen/crt/client.crt", "certs/gen/key/client.key")
